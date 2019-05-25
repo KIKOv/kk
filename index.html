@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .wrap {
+            width: 1000px;
+            position: relative;
+        }
+        
+        .example {
+            position: absolute;
+            top: 20px;
+            right: 50px;
+        }
+        
+        .example ul {
+            display: flex;
+        }
+        
+        .example ul li i {
+            display: inline-block;
+            width: 20px;
+            height: 10px;
+            border-radius: 3px;
+            background: red;
+            margin: 0 3px 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <canvas id="mycanvas" width="1000" height="500" style="border:1px solid #ccc;"></canvas>
+        <div class="example">
+            <ul>
+                <!-- <li><i></i>直接访问</li> -->
+            </ul>
+        </div>
+    </div>
+
+</body>
+<script src="./js/data.js"></script>
+<script>
+    var ul = document.querySelector('.example ul')
+    var can = document.getElementById('mycanvas');
+    context = can.getContext('2d');
+    context.translate(30, 470);
+
+    //x轴
+    context.beginPath();
+    context.moveTo(0, 0);
+    context.lineTo(900, 0);
+    context.stroke();
+    context.closePath();
+    var space_x = 900 / 3000;
+    for (var i = 0; i <= 3000; i += 500) {
+        context.beginPath();
+        context.moveTo((i + 500) * space_x, 0);
+        context.lineTo((i + 500) * space_x, -10);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.textAlign = 'center';
+        context.fillText(i, i * space_x, 10);
+        context.closePath();
+    }
+    //y轴
+    context.beginPath();
+    context.moveTo(0, 0);
+    context.lineTo(0, -400);
+    context.stroke();
+    context.closePath();
+    var space_y = 400 / data.length;
+    for (var i = 0; i <= data.length; i++) {
+        context.beginPath();
+        context.moveTo(0, -i * space_y);
+        context.lineTo(-10, -i * space_y);
+        context.stroke();
+        context.closePath();
+        if (i < data.length) {
+            context.beginPath();
+            context.textBaseline = 'middle';
+            context.textAlign = 'right';
+            context.fillText(data[i].date, 0, -i * space_y - space_y / 2);
+            context.closePath();
+        }
+    }
+    //柱状图
+    for (var i = 0; i < data.length; i++) {
+        var start = 0;
+        for (var j = 0; j < data[i].type.length; j++) {
+            if (j === 0) {
+                start = 0;
+            } else {
+                start += data[i].type[j - 1].count * space_x;
+            }
+            context.beginPath();
+            context.lineWidth = space_y - 10;
+            context.strokeStyle = data[i].type[j].color;
+            context.moveTo(start, -i * space_y - space_y / 2);
+            context.lineTo(start + data[i].type[j].count * space_x, -i * space_y - space_y / 2);
+            context.stroke();
+            context.closePath();
+
+            context.beginPath();
+            context.fillStyle = '#fff';
+            context.textBaseline = 'middle';
+            context.textAlign = 'right';
+            context.fillText(data[i].type[j].count, start + data[i].type[j].count * space_x - 5, -i * space_y - space_y / 2);
+            context.closePath();
+        }
+    }
+    var str = '';
+    data[0].type.forEach(item => {
+        str += `<li><i style='background:${item.color}'></i>${item.name}</li>`
+    })
+    ul.innerHTML = str;
+</script>
+
+</html>

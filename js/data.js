@@ -1,0 +1,162 @@
+var data = [{
+    date: '周一',
+    type: [{
+        name: '直接访问',
+        color: '#C23531',
+        count: 320
+    }, {
+        name: '邮件营销',
+        color: '#2F4554',
+        count: 120
+    }, {
+        name: '联盟广告',
+        color: '#61A0A8',
+        count: 220
+    }, {
+        name: '视频广告',
+        color: '#D48265',
+        count: 150
+    }, {
+        name: '搜索引擎',
+        color: '#91C7AE',
+        count: 820
+    }]
+}, {
+    date: '周二',
+    type: [{
+        name: '直接访问',
+        color: '#C23531',
+        count: 302
+    }, {
+        name: '邮件营销',
+        color: '#2F4554',
+        count: 132
+    }, {
+        name: '联盟广告',
+        color: '#61A0A8',
+        count: 182
+    }, {
+        name: '视频广告',
+        color: '#D48265',
+        count: 212
+    }, {
+        name: '搜索引擎',
+        color: '#91C7AE',
+        count: 832
+    }]
+}, {
+    date: '周三',
+    type: [{
+        name: '直接访问',
+        color: '#C23531',
+        count: 301
+    }, {
+        name: '邮件营销',
+        color: '#2F4554',
+        count: 101
+    }, {
+        name: '联盟广告',
+        color: '#61A0A8',
+        count: 191
+    }, {
+        name: '视频广告',
+        color: '#D48265',
+        count: 201
+    }, {
+        name: '搜索引擎',
+        color: '#91C7AE',
+        count: 901
+    }]
+}, {
+    date: '周四',
+    type: [{
+        name: '直接访问',
+        color: '#C23531',
+        count: 334
+    }, {
+        name: '邮件营销',
+        color: '#2F4554',
+        count: 134
+    }, {
+        name: '联盟广告',
+        color: '#61A0A8',
+        count: 234
+    }, {
+        name: '视频广告',
+        color: '#D48265',
+        count: 154
+    }, {
+        name: '搜索引擎',
+        color: '#91C7AE',
+        count: 934
+    }]
+}, {
+    date: '周五',
+    type: [{
+        name: '直接访问',
+        color: '#C23531',
+        count: 390
+    }, {
+        name: '邮件营销',
+        color: '#2F4554',
+        count: 90
+    }, {
+        name: '联盟广告',
+        color: '#61A0A8',
+        count: 290
+    }, {
+        name: '视频广告',
+        color: '#D48265',
+        count: 190
+    }, {
+        name: '搜索引擎',
+        color: '#91C7AE',
+        count: 1250
+    }]
+}, {
+    date: '周六',
+    type: [{
+        name: '直接访问',
+        color: '#C23531',
+        count: 330
+    }, {
+        name: '邮件营销',
+        color: '#2F4554',
+        count: 230
+    }, {
+        name: '联盟广告',
+        color: '#61A0A8',
+        count: 330
+    }, {
+        name: '视频广告',
+        color: '#D48265',
+        count: 330
+    }, {
+        name: '搜索引擎',
+        color: '#91C7AE',
+        count: 1330
+    }]
+}, {
+    date: '周日',
+    type: [{
+        name: '直接访问',
+        color: '#C23531',
+        count: 320
+    }, {
+        name: '邮件营销',
+        color: '#2F4554',
+        count: 210
+    }, {
+        name: '联盟广告',
+        color: '#61A0A8',
+        count: 310
+    }, {
+        name: '视频广告',
+        color: '#D48265',
+        count: 410
+    }, {
+        name: '搜索引擎',
+        color: '#91C7AE',
+        count: 1320
+    }]
+}]
